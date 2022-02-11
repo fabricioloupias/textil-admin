@@ -16,10 +16,16 @@ export interface Corte {
     contactoTaller: string | null;
     barrioTaller: string | null;
     ubicacionTaller: string | null;
-    tieneTaller: boolean
+    tieneTaller: boolean;
+    entregasACliente: Entrega[];
 }
 
 export interface Pago {
     monto: number;
+    fecha: string;
+}
+
+export interface Entrega {
+    cantidad: number;
     fecha: string;
 }

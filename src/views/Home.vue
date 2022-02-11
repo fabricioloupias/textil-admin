@@ -2,10 +2,7 @@
   <div>
     <v-row>
       <v-col cols="3">
-        <info-card
-          :title="gananciaTotalEnTaller | currency"
-          subtitle="Ganancia total"
-        />
+        <info-card :title="gananciaTotalEnTaller | currency" subtitle="Ganancia total" />
       </v-col>
       <v-col cols="3">
         <info-card
@@ -27,60 +24,121 @@
             :items="cortesConTaller"
             :items-per-page="15"
           >
-            <template v-slot:item.taller="{ item }">{{
-              getNombreTaller(item.tallerId)
-            }}</template>
-            <template v-slot:item.costoTotal="{ item }">{{
-              costoTotal(item) | currency
-            }}</template>
-            <template v-slot:item.faltanteAPagarTaller="{ item }">{{
-              faltanteAPagarTaller(item) | currency
-            }}</template>
-            <template v-slot:item.pagadoATaller="{ item }">{{
-              calculatePagadoATaller(item) | currency
-            }}</template>
-            <template v-slot:item.gananciaUnidadNeta="{ item }">{{
-              gananciaUnidadNeta(item) | currency
-            }}</template>
-            <template v-slot:item.gananciaTotalNeta="{ item }">{{
-              gananciaTotalNeta(item) | currency
-            }}</template>
-            <template v-slot:item.adelantoGananciaNeta="{ item }">{{
-              adelantoGananciaNeta(item) | currency
-            }}</template>
-            <template v-slot:item.faltanteCobroGananciaTotalNeta="{ item }">{{
-              faltanteCobroGananciaTotalNeta(item) | currency
-            }}</template>
-            <template v-slot:item.sumaCosto_NetoUnidad="{ item }">{{
-              sumaCosto_NetoUnidad(item) | currency
-            }}</template>
-            <template v-slot:item.faltanteCobroSumaCosto_Neto="{ item }">{{
-              faltanteCobroSumaCosto_Neto(item) | currency
-            }}</template>
-            <template v-slot:item.sumaCostoTotal_Neto="{ item }">{{
-              sumaCostoTotal_Neto(item) | currency
-            }}</template>
-            <template v-slot:item.descPrecioUnidadCliente_Impuesto="{ item }">{{
-              descPrecioUnidadCliente_Impuesto(item) | currency
-            }}</template>
-            <template v-slot:item.gananciaUTNUnidad="{ item }">{{
-              gananciaUTNUnidad(item) | currency
-            }}</template>
-            <template v-slot:item.gananciaUTNTotal="{ item }">{{
-              gananciaUTNTotal(item) | currency
-            }}</template>
-            <template v-slot:item.diasProduccion="{ item }">{{
-              diasProduccion(item)
-            }}</template>
-            <template v-slot:item.contactoTaller="{ item }">{{
-              getContactoTaller(item.tallerId)
-            }}</template>
-            <template v-slot:item.barrioTaller="{ item }">{{
-              getBarrioTaller(item.tallerId)
-            }}</template>
-            <template v-slot:item.ubicacionTaller="{ item }">{{
-              getUbicacionTaller(item.tallerId)
-            }}</template>
+            <template v-slot:item.taller="{ item }">
+              {{
+                getNombreTaller(item.tallerId)
+              }}
+            </template>
+            <template v-slot:item.costoTotal="{ item }">
+              {{
+                costoTotal(item) | currency
+              }}
+            </template>
+            <template v-slot:item.faltanteAPagarTaller="{ item }">
+              {{
+                faltanteAPagarTaller(item) | currency
+              }}
+            </template>
+            <template v-slot:item.pagadoATaller="{ item }">
+              {{
+                calculatePagadoATaller(item) | currency
+              }}
+            </template>
+            <template v-slot:item.gananciaUnidadNeta="{ item }">
+              {{
+                gananciaUnidadNeta(item) | currency
+              }}
+            </template>
+            <template v-slot:item.gananciaTotalNeta="{ item }">
+              {{
+                gananciaTotalNeta(item) | currency
+              }}
+            </template>
+            <template v-slot:item.adelantoGananciaNeta="{ item }">
+              {{
+                adelantoGananciaNeta(item) | currency
+              }}
+            </template>
+            <template v-slot:item.faltanteCobroGananciaTotalNeta="{ item }">
+              {{
+                faltanteCobroGananciaTotalNeta(item) | currency
+              }}
+            </template>
+            <template v-slot:item.sumaCosto_NetoUnidad="{ item }">
+              {{
+                sumaCosto_NetoUnidad(item) | currency
+              }}
+            </template>
+            <template v-slot:item.faltanteCobroSumaCosto_Neto="{ item }">
+              {{
+                faltanteCobroSumaCosto_Neto(item) | currency
+              }}
+            </template>
+            <template v-slot:item.sumaCostoTotal_Neto="{ item }">
+              {{
+                sumaCostoTotal_Neto(item) | currency
+              }}
+            </template>
+            <template v-slot:item.descPrecioUnidadCliente_Impuesto="{ item }">
+              {{
+                descPrecioUnidadCliente_Impuesto(item) | currency
+              }}
+            </template>
+            <template v-slot:item.gananciaUTNUnidad="{ item }">
+              {{
+                gananciaUTNUnidad(item) | currency
+              }}
+            </template>
+            <template v-slot:item.gananciaUTNTotal="{ item }">
+              {{
+                gananciaUTNTotal(item) | currency
+              }}
+            </template>
+            <template v-slot:item.diasProduccion="{ item }">
+              {{
+                diasProduccion(item)
+              }}
+            </template>
+            <template v-slot:item.contactoTaller="{ item }">
+              {{
+                getContactoTaller(item.tallerId)
+              }}
+            </template>
+            <template v-slot:item.barrioTaller="{ item }">
+              {{
+                getBarrioTaller(item.tallerId)
+              }}
+            </template>
+            <template v-slot:item.ubicacionTaller="{ item }">
+              {{
+                getUbicacionTaller(item.tallerId)
+              }}
+            </template>
+            <template v-slot:item.entregasACliente="{ item }">
+              {{
+                getCantidadPrendasEntregadasACliente(item.entregasACliente)
+              }}
+            </template>
+            <template v-slot:item.diferenciaPrendas="{ item }">
+              {{
+                item.entregasACliente.length > 0 ? getDiferenciaPrendas(item) : null
+              }}
+            </template>
+            <template v-slot:item.devolucionCosto="{ item }">
+              <span
+                v-if="item.entregasACliente.length > 0"
+              >{{ getDevolucionCostoTotal(item) | currency }}</span>
+            </template>
+            <template v-slot:item.devolucionGanancia="{ item }">
+              <span
+                v-if="item.entregasACliente.length > 0"
+              >{{ getDevolucionGananciaTotal(item) | currency }}</span>
+            </template>
+            <template v-slot:item.devolucionTotal="{ item }">
+              <span
+                v-if="item.entregasACliente.length > 0"
+              >{{ getDevolucionTotal(item) | currency }}</span>
+            </template>
           </v-data-table>
         </v-card>
       </v-col>
@@ -93,33 +151,51 @@
             :items="cortesSinTaller"
             :items-per-page="15"
           >
-            <template v-slot:item.costoTotal="{ item }">{{
-              costoTotal(item) | currency
-            }}</template>
-            <template v-slot:item.gananciaUnidadNeta="{ item }">{{
-              gananciaUnidadNeta(item) | currency
-            }}</template>
-            <template v-slot:item.gananciaTotalNeta="{ item }">{{
-              gananciaTotalNeta(item) | currency
-            }}</template>
-            <template v-slot:item.sumaCosto_NetoUnidad="{ item }">{{
-              sumaCosto_NetoUnidad(item) | currency
-            }}</template>
-            <template v-slot:item.faltanteCobroSumaCosto_Neto="{ item }">{{
-              faltanteCobroSumaCosto_Neto(item) | currency
-            }}</template>
-            <template v-slot:item.sumaCostoTotal_Neto="{ item }">{{
-              sumaCostoTotal_Neto(item) | currency
-            }}</template>
-            <template v-slot:item.descPrecioUnidadCliente_Impuesto="{ item }">{{
-              descPrecioUnidadCliente_Impuesto(item) | currency
-            }}</template>
-            <template v-slot:item.gananciaUTNUnidad="{ item }">{{
-              gananciaUTNUnidad(item) | currency
-            }}</template>
-            <template v-slot:item.gananciaUTNTotal="{ item }">{{
-              gananciaUTNTotal(item) | currency
-            }}</template>
+            <template v-slot:item.costoTotal="{ item }">
+              {{
+                costoTotal(item) | currency
+              }}
+            </template>
+            <template v-slot:item.gananciaUnidadNeta="{ item }">
+              {{
+                gananciaUnidadNeta(item) | currency
+              }}
+            </template>
+            <template v-slot:item.gananciaTotalNeta="{ item }">
+              {{
+                gananciaTotalNeta(item) | currency
+              }}
+            </template>
+            <template v-slot:item.sumaCosto_NetoUnidad="{ item }">
+              {{
+                sumaCosto_NetoUnidad(item) | currency
+              }}
+            </template>
+            <template v-slot:item.faltanteCobroSumaCosto_Neto="{ item }">
+              {{
+                faltanteCobroSumaCosto_Neto(item) | currency
+              }}
+            </template>
+            <template v-slot:item.sumaCostoTotal_Neto="{ item }">
+              {{
+                sumaCostoTotal_Neto(item) | currency
+              }}
+            </template>
+            <template v-slot:item.descPrecioUnidadCliente_Impuesto="{ item }">
+              {{
+                descPrecioUnidadCliente_Impuesto(item) | currency
+              }}
+            </template>
+            <template v-slot:item.gananciaUTNUnidad="{ item }">
+              {{
+                gananciaUTNUnidad(item) | currency
+              }}
+            </template>
+            <template v-slot:item.gananciaUTNTotal="{ item }">
+              {{
+                gananciaUTNTotal(item) | currency
+              }}
+            </template>
           </v-data-table>
         </v-card>
       </v-col>
@@ -129,7 +205,7 @@
 
 <script lang="ts">
 import Vue from "vue"
-import { Corte } from "@/domain/Corte"
+import { Corte, Entrega } from "@/domain/Corte"
 import InfoCard from "@/components/InfoCard.vue"
 import { db } from "@/db"
 import { collection, getDocs } from "firebase/firestore/lite"
@@ -325,6 +401,46 @@ export default class Home extends Vue {
       width: 120,
     },
     {
+      text: "Prendas entregadas a cliente",
+      align: "end",
+      sortable: false,
+      divider: false,
+      value: "entregasACliente",
+      width: 120,
+    },
+    {
+      text: "Diferencia de prendas",
+      align: "end",
+      sortable: false,
+      divider: false,
+      value: "diferenciaPrendas",
+      width: 120,
+    },
+    {
+      text: "Devolucion de costo",
+      align: "end",
+      sortable: false,
+      divider: false,
+      value: "devolucionCosto",
+      width: 130,
+    },
+    {
+      text: "Devolucion de ganancia",
+      align: "end",
+      sortable: false,
+      divider: false,
+      value: "devolucionGanancia",
+      width: 130,
+    },
+    {
+      text: "Devolucion total",
+      align: "end",
+      sortable: false,
+      divider: false,
+      value: "devolucionTotal",
+      width: 130,
+    },
+    {
       text: "Marca",
       align: "start",
       sortable: false,
@@ -407,7 +523,7 @@ export default class Home extends Vue {
       sortable: false,
       divider: false,
       value: "gananciaTotalNeta",
-       width: 120,
+      width: 120,
     },
     {
       text: "Costo + neto por unidad",
@@ -510,6 +626,29 @@ export default class Home extends Vue {
         this.talleres.push({ ...(doc.data() as Taller), id: doc.id })
       })
     })
+  }
+
+  getCantidadPrendasEntregadasACliente(entregas: Entrega[]): number {
+    console.log(entregas)
+    let sum = 0;
+    entregas.map(e => sum += e.cantidad);
+    return sum;
+  }
+
+  getDiferenciaPrendas(corte: Corte): number {
+    return this.getCantidadPrendasEntregadasACliente(corte.entregasACliente) - corte.totalPrendas
+  }
+
+  getDevolucionCostoTotal(corte: Corte): number {
+    return Math.abs(corte.costoPorUnidad * this.getDiferenciaPrendas(corte))
+  }
+
+  getDevolucionGananciaTotal(corte: Corte): number {
+    return Math.abs(this.gananciaUnidadNeta(corte) * this.getDiferenciaPrendas(corte))
+  }
+
+  getDevolucionTotal(corte: Corte): number {
+    return this.getDevolucionCostoTotal(corte) + this.getDevolucionGananciaTotal(corte)
   }
 
   getTallerById(id: string): Taller | undefined {
