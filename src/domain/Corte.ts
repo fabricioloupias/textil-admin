@@ -1,29 +1,25 @@
+import { Taller } from "./Taller";
+
 export interface Corte {
-    taller: string;
+    taller: Taller;
     id: string;
     prenda: string;
     totalPrendas: number;
     costoPorUnidad: number;
-    costoTotal: number;
-    pagadoATaller: number;
-    faltanteAPagarTaller: number;
-    gananciaUnidadNeta: number;
-    gananciaTotalNeta: number;
-    adelantoGananciaNeta: number;
-    faltanteCobroGananciaTotalNeta: number;
-    sumaCosto_Neto: number;
-    faltanteCobroSumaCosto_Neto: number;
-    sumaCostoTotal_Neto: number;
+    pagadoATaller: Pago[];
+    adelantoGananciaNeta: Pago[];
     precioUnidadCliente: number;
-    descPrecioUnidadCliente_Impuesto: number;
-    gananciaUTNUnidad: number;
-    gananciaUTNTotal: number;
-    fechaEnviado: string;
+    fechaEnviado: string | null;
     fechaEntregado: string | null;
     fechaEstimadoEntrega: string | null;
-    diasProduccion: number;
     marcaPrenda: string;
-    contactoTaller: string;
-    barrioTaller: string;
-    ubicacionTaller: string
+    contactoTaller: string | null;
+    barrioTaller: string | null;
+    ubicacionTaller: string | null;
+    tieneTaller: boolean
+}
+
+export interface Pago {
+    monto: number;
+    fecha: string;
 }
